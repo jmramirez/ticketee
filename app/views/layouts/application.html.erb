@@ -13,12 +13,31 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
-    <% flash.each do |key, message| %>
-      <div><%= message %></div>
-    <% end %>
-    <%= yield %>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+        <%= link_to "Ticketee", root_path, class: "navbar-brand" %>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapse" aria-controls="collapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapse">
+          <ul class="navbar-nav">
+            <li class="nav-item <%= "active" if current_page?("/") %>">
+              <%= link_to "Home", root_path, class: "nav-link" %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <% flash.each do |key, message| %>
+        <div class="alert alert-<%= key %>"><%= message %></div>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>
