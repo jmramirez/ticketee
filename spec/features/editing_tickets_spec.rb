@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Users can edit existing projects" do
+RSpec.feature "Users can edit existing tickets" do
   let(:project) { FactoryBot.create(:project)}
   let(:ticket) {FactoryBot.create(:ticket, project: project)}
 
