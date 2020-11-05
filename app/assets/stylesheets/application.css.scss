@@ -18,6 +18,7 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome";
 @import "projects";
+@import "tickets";
 @import "responsive";
 
 .page-header {
@@ -112,5 +113,25 @@ body {
   a.new, a.edit, a.delete {
     @extend .btn;
     font-size: .8rem;
+  }
+}
+
+#attributes {
+  @extend .table;
+  @extend .table-sm;
+  width: 65%;
+
+  th {
+    width: 35%;
+  }
+
+  tr:first-child {
+    td, th {
+      border-top: 0;
+    }
+  }
+
+  td, th {
+    line-height: 24px !important;
   }
 }
