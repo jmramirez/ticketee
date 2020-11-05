@@ -12,5 +12,13 @@ class User < ApplicationRecord
     self.update(archived_at: Time.now)
   end
 
+  def active_for_authentication?
+    super && archived_at.nil?
+  end
+
+  def inactive_message
+    archived_at.nil? ? super : :archived
+  end
+
   scope :excluding_archived, lambda { where(archived_at: nil)}
 end
