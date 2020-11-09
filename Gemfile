@@ -15,6 +15,7 @@ gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
 gem 'simple_form', '~> 5.0', '>= 5.0.3'
 gem 'devise', '~> 4.7', '>= 4.7.3'
 gem 'pundit', '~> 2.1'
+gem 'carrierwave', '~> 2.1'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
